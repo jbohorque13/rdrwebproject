@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuthContext } from '../../contexts/auth';
 
-function Dashboard(props:any) {
+function Dashboard() {
   const {name, toggleName} = useAuthContext()
   return (
     <div>
