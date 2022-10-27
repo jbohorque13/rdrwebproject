@@ -8,7 +8,11 @@ const InnerApp: React.FC = React.memo(() => {
     <React.Suspense>
       <Routes>
         {Object.values(routes).map(route => (
-            <Route path={route.path} />
+            <Route
+              key={route.path}
+              path={route.path} 
+              element={route.element} 
+            />
         ))}
       </Routes>
     </React.Suspense>
