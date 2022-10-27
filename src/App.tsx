@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
+import ProviderAuth from './contexts/auth';
 import { routes } from './utils/routesHelper';
 
 const InnerApp: React.FC = React.memo(() => {
@@ -28,12 +29,11 @@ const InnerApp: React.FC = React.memo(() => {
 })
 
 const App: React.FC = () => {
-
   return (
-    <div>
+    <ProviderAuth>
       <Sidebar />
       <InnerApp />
-    </div>
+    </ProviderAuth>
   )
 }
 
