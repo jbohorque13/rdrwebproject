@@ -19,7 +19,7 @@ export const routes: CommonJSON<IRoute> = {
       element: <Home />
     },
     DASHBOARD:{
-      path: '/dashboard',
+      path: '/dashboard/:accessToken',
       element: <Dashboard />
     },
     PERSON:{

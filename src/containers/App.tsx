@@ -29,7 +29,6 @@ const InnerApp: React.FC = React.memo(() => {
 })
 
 const App: React.FC = () => {
-  // with useEffect event refresh check if tiene queryParams
   return (
     <ProviderAuth>
       <Sidebar />
