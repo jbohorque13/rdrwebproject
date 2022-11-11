@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import Sidebar from '../components/Sidebar/Sidebar';
 import ProviderAuth from '../contexts/auth';
 import { routes } from '../utils/routesHelper';
+import {testEnv} from 'utils/api';
+testEnv()
 
 const InnerApp: React.FC = React.memo(() => {
   const renderRoutes = (
