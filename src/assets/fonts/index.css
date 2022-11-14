@@ -1,0 +1,184 @@
+/* Qanelas */
+@font-face {
+  font-family: "Qanelas";
+  src: 
+    local("Qanelas"),
+    url(./qanelas/Qanelas-Regular.woff2) format('woff2'),
+    url(./qanelas/Qanelas-Regular.woff) format('woff'),
+    url(./qanelas/Qanelas-Regular.eot) format('embedded-opentype'),
+    url(./qanelas/Qanelas-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qanelas";
+  src: 
+    local("Qanelas"),
+    url(./qanelas/Qanelas-Medium.woff2) format('woff2'),
+    url(./qanelas/Qanelas-Medium.woff) format('woff'),
+    url(./qanelas/Qanelas-Medium.eot) format('embedded-opentype'),
+    url(./qanelas/Qanelas-Medium.ttf) format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qanelas";
+  src: 
+    local("Qanelas"),
+    url(./qanelas/Qanelas-SemiBold.woff2) format('woff2'),
+    url(./qanelas/Qanelas-SemiBold.woff) format('woff'),
+    url(./qanelas/Qanelas-SemiBold.eot) format('embedded-opentype'),
+    url(./qanelas/Qanelas-SemiBold.ttf) format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qanelas";
+  src: 
+    local("Qanelas"),
+    url(./qanelas/Qanelas-SemiBoldItalic.woff2) format('woff2'),
+    url(./qanelas/Qanelas-SemiBoldItalic.woff) format('woff'),
+    url(./qanelas/Qanelas-SemiBoldItalic.eot) format('embedded-opentype'),
+    url(./qanelas/Qanelas-SemiBoldItalic.ttf) format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qanelas";
+  src: 
+    local("Qanelas"),
+    url(./qanelas/Qanelas-Bold.woff2) format('woff2'),
+    url(./qanelas/Qanelas-Bold.woff) format('woff'),
+    url(./qanelas/Qanelas-Bold.eot) format('embedded-opentype'),
+    url(./qanelas/Qanelas-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qanelas";
+  src: 
+    local("Qanelas"),
+    url(./qanelas/Qanelas-BoldItalic.woff2) format('woff2'),
+    url(./qanelas/Qanelas-BoldItalic.woff) format('woff'),
+    url(./qanelas/Qanelas-BoldItalic.eot) format('embedded-opentype'),
+    url(./qanelas/Qanelas-BoldItalic.ttf) format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qanelas";
+  src: 
+    local("Qanelas"),
+    url(./qanelas/Qanelas-ExtraBold.woff2) format('woff2'),
+    url(./qanelas/Qanelas-ExtraBold.woff) format('woff'),
+    url(./qanelas/Qanelas-ExtraBold.eot) format('embedded-opentype'),
+    url(./qanelas/Qanelas-ExtraBold.ttf) format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qanelas";
+  src: 
+    local("Qanelas"),
+    url(./qanelas/Qanelas-ExtraBoldItalic.woff2) format('woff2'),
+    url(./qanelas/Qanelas-ExtraBoldItalic.woff) format('woff'),
+    url(./qanelas/Qanelas-ExtraBoldItalic.eot) format('embedded-opentype'),
+    url(./qanelas/Qanelas-ExtraBoldItalic.ttf) format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Inter */
+@font-face {
+  font-family: "Inter";
+  src: 
+    local("Inter"),
+    url(./inter/Inter-Regular.woff2) format('woff2'),
+    url(./inter/Inter-Regular.woff) format('woff'),
+    url(./inter/Inter-Regular.eot) format('embedded-opentype'),
+    url(./inter/Inter-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: 
+    local("Inter"),
+    url(./inter/Inter-Medium.woff2) format('woff2'),
+    url(./inter/Inter-Medium.woff) format('woff'),
+    url(./inter/Inter-Medium.eot) format('embedded-opentype'),
+    url(./inter/Inter-Medium.ttf) format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: 
+    local("Inter"),
+    url(./inter/Inter-SemiBold.woff2) format('woff2'),
+    url(./inter/Inter-SemiBold.woff) format('woff'),
+    url(./inter/Inter-SemiBold.eot) format('embedded-opentype'),
+    url(./inter/Inter-SemiBold.ttf) format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: 
+    local("Inter"),
+    url(./inter/Inter-Bold.woff2) format('woff2'),
+    url(./inter/Inter-Bold.woff) format('woff'),
+    url(./inter/Inter-Bold.eot) format('embedded-opentype'),
+    url(./inter/Inter-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Mulish */
+@font-face {
+  font-family: "Mulish";
+  src: 
+    local("Mulish"),
+    url(./mulish/Mulish-Regular.woff2) format('woff2'),
+    url(./mulish/Mulish-Regular.woff) format('woff'),
+    url(./mulish/Mulish-Regular.eot) format('embedded-opentype'),
+    url(./mulish/Mulish-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: 
+    local("Mulish"),
+    url(./mulish/Mulish-Bold.woff2) format('woff2'),
+    url(./mulish/Mulish-Bold.woff) format('woff'),
+    url(./mulish/Mulish-Bold.eot) format('embedded-opentype'),
+    url(./mulish/Mulish-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

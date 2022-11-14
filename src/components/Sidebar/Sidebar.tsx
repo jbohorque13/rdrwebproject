@@ -1,29 +1,32 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import {
+  StyledNav,
+  StyledList,
+  StyledListRow,
+  StyledLink
+} from './styles';
 
 const Sidebar = () => {
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <Link to='/'>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard">
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link to="/person-to-group">
-              Person to group
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </>
+    <StyledNav>
+      <StyledList>
+        <StyledListRow>
+          <StyledLink to='/'>
+            Home
+          </StyledLink>
+        </StyledListRow>
+        <StyledListRow>
+          <StyledLink to="/dashboard">
+            Dashboard
+          </StyledLink>
+        </StyledListRow>
+        <StyledListRow>
+          <StyledLink to="/person-to-group">
+            Person to group
+          </StyledLink>
+        </StyledListRow>
+      </StyledList>
+    </StyledNav>
   )
 }
 
