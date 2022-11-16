@@ -20,6 +20,7 @@ export const StyledTableHead = styled.thead`
 
 export const StyledTableHeadRow = styled.tr`
   height: 48px;
+  flex-grow: 1;
 `;
 
 export const StyledTableHeadCell = styled.th`
@@ -28,15 +29,12 @@ export const StyledTableHeadCell = styled.th`
 
 export const StyledTableBody = styled.tbody`
   display: flex;
-  flex-direction: row;
-  height: 100px;
+  flex-direction: column;
   color: 'grey';
 `;
 
 export const StyledTableBodyRow = styled.tr`
-  min-height: 10px;
   height: auto;
-  padding: 0 40px;
 `;
 export const StyledTableBodyCell = styled.td<{ $withOverFlow?: boolean }>`
   padding: 12px 20px;
