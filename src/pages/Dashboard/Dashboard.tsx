@@ -1,6 +1,5 @@
 import React from 'react';
 import { Column, useTable } from 'react-table';
-import {useParams} from 'react-router-dom';
 import {
   StyledWrapper,
   StyledTable,
@@ -37,8 +36,6 @@ interface LeaderShip {
 }
 
 const Dashboard: React.FC = () => {
-  // Hook
-  const {accessToken} = useParams();
   // useMemo
   const data = React.useMemo<LeaderShip[]>(() => [
     {
@@ -65,8 +62,6 @@ const Dashboard: React.FC = () => {
     ],
     []
   );
-  
-  console.log(data, accessToken, columns);
 
   const {
     getTableProps,
