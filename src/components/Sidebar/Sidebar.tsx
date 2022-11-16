@@ -12,17 +12,17 @@ const Sidebar = () => {
       <StyledList>
         <StyledListRow>
           <StyledLink to='/'>
-            Home
+            Inicio
           </StyledLink>
         </StyledListRow>
         <StyledListRow>
           <StyledLink to="/dashboard">
-            Dashboard
+            Guias Tabla
           </StyledLink>
         </StyledListRow>
         <StyledListRow>
           <StyledLink to="/person-to-group">
-            Person to group
+            Personas a consolidar
           </StyledLink>
         </StyledListRow>
       </StyledList>

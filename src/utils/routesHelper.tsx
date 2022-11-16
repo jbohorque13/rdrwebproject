@@ -15,11 +15,11 @@ type CommonJSON<V = any> = {
 
 export const routes: CommonJSON<IRoute> = {
     HOME:{
-      path: '/',
+      path: '/:id_token',
       element: <Home />
     },
     DASHBOARD:{
-      path: '/dashboard/:accessToken',
+      path: '/dashboard',
       element: <Dashboard />
     },
     PERSON:{
