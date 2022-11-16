@@ -12,7 +12,7 @@ import { GlobalStyle } from 'theme/globalStyle';
 import {
   StyledRoutesContainer,
   StyledContentMain
-} from './style'
+} from './style';
 
 const InnerApp: React.FC = React.memo(() => {
   // Hooks
