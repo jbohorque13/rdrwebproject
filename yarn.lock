@@ -2031,7 +2031,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-table@^7.7.12":
+"@types/react-table@^7.7.6":
   version "7.7.12"
   resolved "https://registry.npmjs.org/@types/react-table/-/react-table-7.7.12.tgz"
   integrity sha512-bRUent+NR/WwtDGwI/BqhZ8XnHghwHw0HUKeohzB5xN3K2qKWYE5w19e7GCuOkL1CXD9Gi1HFy7TIm2AvgWUHg==
@@ -7380,7 +7380,7 @@ react-error-overlay@^6.0.11:
 
 react-grid-system@^8.1.6:
   version "8.1.6"
-  resolved "https://registry.yarnpkg.com/react-grid-system/-/react-grid-system-8.1.6.tgz#1ee145ca694e480d98a96a8d9ae34520e913d934"
+  resolved "https://registry.npmjs.org/react-grid-system/-/react-grid-system-8.1.6.tgz"
   integrity sha512-1CuQNbT0FRw6iBZrUxOT9S42uRnJOUQsG2iahZUrPGAMul7uHkrov90OfBGLrA2C0hrZ1PFq3UCbRalvwrvkuQ==
   dependencies:
     prop-types "^15.8.0"
@@ -7477,7 +7477,7 @@ react-scripts@5.0.1:
 
 react-table@^7.8.0:
   version "7.8.0"
-  resolved "https://registry.npmjs.org/react-table/-/react-table-7.8.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.8.0.tgz#07858c01c1718c09f7f1aed7034fcfd7bda907d2"
   integrity sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==
 
 react@^18.2.0:
@@ -8229,7 +8229,7 @@ styled-components@^5.3.6:
 
 styled-normalize@^8.0.7:
   version "8.0.7"
-  resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-8.0.7.tgz#e883bff6a0c59a65a39365a4eb9c6cf48372c61f"
+  resolved "https://registry.npmjs.org/styled-normalize/-/styled-normalize-8.0.7.tgz"
   integrity sha512-qQV4O7B9g7ZUnStCwGde7Dc/mcFF/pz0Ha/LL7+j/r6uopf6kJCmmR7jCPQMCBrDkYiQ4xvw1hUoceVJkdaMuQ==
 
 stylehacks@^5.1.0:

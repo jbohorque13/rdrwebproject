@@ -1,0 +1,82 @@
+/*
+  NOTE:
+  You can import these elements in your component and use it as follows:
+  import { ShareSVG } from 'components/UI/Icon';
+  ...
+  <ShareSVG />
+*/
+
+export { ReactComponent as IconCrossCircleSVG } from 'assets/icons/cross-circle.svg';
+export { ReactComponent as IconColiseumLogo1SVG } from 'assets/icons/coliseum-logo-1.svg';
+export { ReactComponent as IconEyeOpenSVG } from 'assets/icons/eye-open.svg';
+export { ReactComponent as IconEyeClosedSVG } from 'assets/icons/eye-closed.svg';
+export { ReactComponent as IconGoogleSVG } from 'assets/icons/google-icon.svg';
+export { ReactComponent as IconValidTickCircleSVG } from 'assets/icons/valid-tick-circle.svg';
+export { ReactComponent as IconYellowBkgEllipsisSVG } from 'assets/icons/yellow-bkg-ellipsis.svg';
+export { ReactComponent as IconBlackBkgEllipsisSVG } from 'assets/icons/black-bkg-ellipsis.svg';
+export { ReactComponent as IconDangerSVG } from 'assets/icons/danger.svg';
+export { ReactComponent as IconWarningSVG } from 'assets/icons/warning.svg';
+export { ReactComponent as IconConversationsActiveSVG } from 'assets/icons/conversations-active.svg';
+export { ReactComponent as IconConversationsNotActiveSVG } from 'assets/icons/conversations-not-active.svg';
+export { ReactComponent as IconDashboardActiveSVG } from 'assets/icons/dashboard-active.svg';
+export { ReactComponent as IconDashboardNotActiveSVG } from 'assets/icons/dashboard-not-active.svg';
+export { ReactComponent as IconInfoActiveSVG } from 'assets/icons/info-active.svg';
+export { ReactComponent as IconInfoNotActiveSVG } from 'assets/icons/info-not-active.svg';
+export { ReactComponent as IconLayersActiveSVG } from 'assets/icons/layers-active.svg';
+export { ReactComponent as IconLayersNotActiveSVG } from 'assets/icons/layers-not-active.svg';
+export { ReactComponent as IconManagerActiveSVG } from 'assets/icons/manager-active.svg';
+export { ReactComponent as IconManagerNotActiveSVG } from 'assets/icons/manager-not-active.svg';
+export { ReactComponent as IconSettingsActiveSVG } from 'assets/icons/settings-active.svg';
+export { ReactComponent as IconSettingsNotActiveSVG } from 'assets/icons/settings-not-active.svg';
+export { ReactComponent as IconStatisticsActiveSVG } from 'assets/icons/statistics-active.svg';
+export { ReactComponent as IconStatisticsNotActiveSVG } from 'assets/icons/statistics-not-active.svg';
+export { ReactComponent as IconTagsActiveSVG } from 'assets/icons/tags-active.svg';
+export { ReactComponent as IconTagsNotActiveSVG } from 'assets/icons/tags-not-active.svg';
+export { ReactComponent as IconTrashActiveSVG } from 'assets/icons/trash-active.svg';
+export { ReactComponent as IconTrashNotActiveSVG } from 'assets/icons/trash-not-active.svg';
+export { ReactComponent as IconUsersActiveSVG } from 'assets/icons/users-active.svg';
+export { ReactComponent as IconUsersNotActiveSVG } from 'assets/icons/users-not-active.svg';
+export { ReactComponent as IconAtSignSVG } from 'assets/icons/at-sign.svg';
+export { ReactComponent as IconAvatarPlaceholderSVG } from 'assets/icons/user-circle-duotone.svg';
+export { ReactComponent as IconArrowDown } from 'assets/icons/arrow-down.svg';
+export { ReactComponent as IconArrowTop } from 'assets/icons/arrow-top.svg';
+export { ReactComponent as IconTeamActiveSVG } from 'assets/icons/team-active.svg';
+export { ReactComponent as IconTeamNotActiveSVG } from 'assets/icons/team-not-active.svg';
+export { ReactComponent as IconUserActiveSVG } from 'assets/icons/user-active.svg';
+export { ReactComponent as IconUserNotActiveSVG } from 'assets/icons/user-not-active.svg';
+export { ReactComponent as IconCrossCircleBigSVG } from 'assets/icons/cross-circle-big.svg';
+export { ReactComponent as IconSearchSVG } from 'assets/icons/search.svg';
+export { ReactComponent as IconCloseSVG } from 'assets/icons/close.svg';
+export { ReactComponent as IconYellowCloseSVG } from 'assets/icons/yellow-close.svg';
+export { ReactComponent as IconStrokeSVG } from 'assets/icons/stroke-icon.svg';
+export { ReactComponent as IconCheckCircleSVG } from 'assets/icons/check-circle.svg';
+export { ReactComponent as IconEditSVG } from 'assets/icons/edit.svg';
+export { ReactComponent as IconArrowLeftSVG } from 'assets/icons/arrow-left.svg';
+export { ReactComponent as IconArrowRightSVG } from 'assets/icons/arrow-right.svg';
+export { ReactComponent as IconBrandsActiveSVG } from 'assets/icons/brands-active.svg';
+export { ReactComponent as IconBrandsNotActiveSVG } from 'assets/icons/brands-not-active.svg';
+export { ReactComponent as IconTwitterSVG } from 'assets/icons/twitter.svg';
+export { ReactComponent as IconInstagramSVG } from 'assets/icons/instagram.svg';
+export { ReactComponent as IconFacebookSVG } from 'assets/icons/facebook.svg';
+export { ReactComponent as IconCloseBlackSmallSVG } from 'assets/icons/close-black-small.svg';
+export { ReactComponent as IconCalendarSVG } from 'assets/icons/calendar.svg';
+export { ReactComponent as IconTimeSVG } from 'assets/icons/time.svg';
+export { ReactComponent as IconLegalInfoNotActiveSVG } from 'assets/icons/legal-info.svg';
+export { ReactComponent as IconLegalInfoActiveSVG } from 'assets/icons/legal-info-active.svg';
+export { ReactComponent as IconCodeKeyActiveSVG } from 'assets/icons/code-key-active.svg';
+export { ReactComponent as IconCodeKeyDesactiveSVG } from 'assets/icons/code-key-desactive.svg';
+export { ReactComponent as IconBlockDisableSVG } from 'assets/icons/block-disable-icon.svg';
+export { ReactComponent as IconBlockEnableSVG } from 'assets/icons/block-enable-icon.svg';
+export { ReactComponent as IconDownloadSVG } from 'assets/icons/download-icon.svg';
+export { ReactComponent as OptionsIconSVG } from 'assets/icons/options-icon.svg';
+export { ReactComponent as IconColiseumPlaceholderSVG } from 'assets/icons/colisem-logo-placeholder.svg';
+export { ReactComponent as IconSendSVG } from 'assets/icons/send.svg';
+export { ReactComponent as IconOfflineBoltSVG } from 'assets/icons/offline-bolt.svg';
+export { ReactComponent as IconFileSignatureSVG } from 'assets/icons/file-signature.svg';
+export { ReactComponent as IconIssueActiveSVG } from 'assets/icons/issueActive.svg';
+export { ReactComponent as IconIssueNotActiveSVG } from 'assets/icons/issue.svg';
+export { ReactComponent as IconWatchLaterSVG } from 'assets/icons/watch-later.svg';
+export { ReactComponent as IconCheckCircleFilledSVG } from 'assets/icons/check-circle-green.svg';
+export { ReactComponent as IconCrossCirlceFilledSVG } from 'assets/icons/cross-circle-red.svg';
+export { ReactComponent as IconEmailSVG } from 'assets/icons/email.svg';
+export { ReactComponent as ArrowTopDownSVG } from 'assets/icons/arrow-top-down.svg';
