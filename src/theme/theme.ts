@@ -97,7 +97,7 @@ export const fontWeights = {
   extraBold: 700,
 };
 
-export const pageContainerWidth = 1100;
+export const pageContainerWidth = 1180;
 
 const theme = {
   colors,

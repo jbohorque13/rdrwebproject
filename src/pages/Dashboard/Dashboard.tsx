@@ -1,10 +1,13 @@
 import React from 'react';
 import { Column } from 'react-table';
+import { Helmet } from 'react-helmet';
 // Table
 import Table from 'components/UI/Table';
 import { IconEyeOpenSVG, IconEditSVG } from 'components/UI/Icon'
 import {
   StyledActionBodyCell,
+  PageMainContainer,
+  StyledTempText
 } from './style';
 
 
@@ -39,7 +42,7 @@ const Dashboard: React.FC = () => {
       full_name: 'Josue',
       email: 'josuebohorquezc@gmail.com',
       phone_number: '1158676125',
-      coordination: 'Vicente Loli',
+      coordination: 'Vicente Loli es mi coordinador desde hace mas de 10 anos',
       age: '29',
       group_day: 'Viernes',
       group_hour: '21:00',
@@ -66,11 +69,11 @@ const Dashboard: React.FC = () => {
         accessor: 'coordination'
       },
       {
-        Header: 'Que dia da el grupo',
+        Header: 'dia del grupo',
         accessor: 'group_day'
       },
       {
-        Header: 'A que hora da el grupo',
+        Header: 'Hora del grupo',
         accessor: 'group_hour'
       },
       {
@@ -89,10 +92,20 @@ const Dashboard: React.FC = () => {
   );
 
   return (
-    <Table 
-      data={data} 
-      columns={columns} 
-    />
+    <>
+      <Helmet titleTemplate='Rdr Admin - Integracion'>
+        <title> Integracion </title>
+      </Helmet>
+      <PageMainContainer>
+        <StyledTempText>
+          Lideres de todas las lineas
+        </StyledTempText>
+        <Table 
+          data={data} 
+          columns={columns} 
+        />
+      </PageMainContainer>
+    </>
   )
 }
 

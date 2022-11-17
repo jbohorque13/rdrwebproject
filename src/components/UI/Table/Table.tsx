@@ -37,14 +37,19 @@ const Table = ({ data, columns }: TableProps) => {
           <StyledTableHead>
           {headerGroups.map(headerGroup => (
           <StyledTableHeadRow {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
-                <StyledTableHeadCell
-                  {...column.getHeaderProps()}
-                >
-                  {column.render('Header')}
-                  <StyledIconDropdown />
-                </StyledTableHeadCell>
-              ))}
+              {headerGroup.headers.map(column => {
+                console.log('column', column);
+                return (
+
+                  <StyledTableHeadCell
+                    {...column.getHeaderProps()}
+                    $isAction={column.Header === 'Acciones'}
+                  >
+                    {column.render('Header')}
+                    <StyledIconDropdown />
+                  </StyledTableHeadCell>
+                )
+              })}
             </StyledTableHeadRow>
           ))}
             </StyledTableHead>
@@ -57,7 +62,7 @@ const Table = ({ data, columns }: TableProps) => {
                     {row.cells.map(cell => {
                       return (
                         <StyledTableBodyCell
-                          $withOverFlow={true}
+                          $withOverFlow
                           {...cell.getCellProps()}
                         >
                           {cell.render('Cell')}

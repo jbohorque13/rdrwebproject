@@ -36,11 +36,12 @@ export const StyledTableHeadRow = styled.tr`
   flex-grow: 1;
 `;
 
-export const StyledTableHeadCell = styled.th`
+export const StyledTableHeadCell = styled.th<{ $isAction?: boolean }>`
   text-align: left;
   font-weight: ${theme.fontWeights.semiBold};
   padding: 16px 8px;
-  width: 180px;
+  width: 160px;
+  ${({$isAction}) => $isAction && `color: ${theme.colors.ricciardoYellow}`}
 `;
 
 export const StyledTableBody = styled.tbody`
@@ -60,10 +61,10 @@ export const StyledTableBodyRow = styled.tr`
 
 export const StyledTableBodyCell = styled.td<{ $withOverFlow?: boolean }>`
   padding: 12px 20px;
-  padding-left: 8px;
+  padding-left: 14px;
   text-overflow: ellipsis;
-  min-width: 160px;
-  max-width: 180px;
+  min-width: 130px;
+  max-width: 150px;
   text-align: left;
   ${({ $withOverFlow }) => ($withOverFlow ? `
     overflow: hidden;
