@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const StyledNav = styled.nav`
   display: flex;
   background-color: darkGrey;
-  max-width: 290px;
+  max-width: 250px;
   width: 100%;
 `;
 

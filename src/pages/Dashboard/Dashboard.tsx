@@ -4,15 +4,7 @@ import { Column, useTable } from 'react-table';
 import Table from 'components/UI/Table';
 
 import {
-  StyledWrapper,
-  StyledTable,
-  StyledTableBody,
-  StyledTableHead,
-  StyledTableHeadRow,
-  StyledTableHeadCell,
-  StyledTableBodyRow,
-  StyledTableBodyCell,
-  StyledIconDropdown
+  StyledTableHeadRowCustom
 } from './style';
 
 
@@ -66,7 +58,8 @@ const Dashboard: React.FC = () => {
       },
       {
         Header: 'Email',
-        accessor: 'email'
+        accessor: 'email',
+        
       },
       {
         Header: 'Coordinacion',
