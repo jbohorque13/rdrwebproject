@@ -1,5 +1,8 @@
 import React from 'react';
 import { Column, useTable } from 'react-table';
+// Table
+import Table from 'components/UI/Table';
+
 import {
   StyledWrapper,
   StyledTable,
@@ -8,8 +11,10 @@ import {
   StyledTableHeadRow,
   StyledTableHeadCell,
   StyledTableBodyRow,
-  StyledTableBodyCell
+  StyledTableBodyCell,
+  StyledIconDropdown
 } from './style';
+
 
 interface LeaderShip {
   fullName: string;
@@ -63,52 +68,11 @@ const Dashboard: React.FC = () => {
     []
   );
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow
-  } = useTable<LeaderShip>({ columns, data });
-
   return (
-    <StyledWrapper>
-      <StyledTable {...getTableProps()}>
-        <StyledTableHead>
-        {headerGroups.map(headerGroup => (
-        <StyledTableHeadRow {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <StyledTableHeadCell
-                {...column.getHeaderProps()}
-              >
-                {column.render('Header')}
-              </StyledTableHeadCell>
-            ))}
-          </StyledTableHeadRow>
-        ))}
-          </StyledTableHead>
-          
-          <StyledTableBody {...getTableBodyProps()}>
-            {rows.map(row => {
-              prepareRow(row);
-              return (
-                <StyledTableBodyRow {...row.getRowProps()}>
-                  {row.cells.map(cell => {
-                    return (
-                      <StyledTableBodyCell
-                        $withOverFlow={true}
-                        {...cell.getCellProps()}
-                      >
-                        {cell.render('Cell')}
-                      </StyledTableBodyCell>
-                    )
-                  })}
-                </StyledTableBodyRow>
-              )
-            })}
-          </StyledTableBody>
-      </StyledTable>
-    </StyledWrapper>
+    <Table 
+      data={data} 
+      columns={columns} 
+    />
   )
 }
 
