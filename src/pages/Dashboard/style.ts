@@ -1,10 +1,19 @@
 import styled  from 'styled-components';
-import {theme} from 'theme';
+import { IconEditSVG, IconEyeClosedSVG } from 'components/UI/Icon';
+import { theme } from 'theme';
 
-export const StyledTableHeadRowCustom = styled.div`
-  display: flex;
-  align-items: flex-end;
-  width: 160px;
-  padding-top: 16px;
+export const StyledIconEditSVG = styled(IconEditSVG)`
+  color: ${theme.colors.darkGrey};
+  width: 40px;
+  height: 40px;
+`;
+export const StyledIconEyeClosedSVG = styled(IconEyeClosedSVG)`
+  color: ${theme.colors.darkGrey};
+  width: 40px;
+  height: 40px;
+`;
+
+export const StyledActionBodyCell = styled.div`
   text-align: left;
+  cursor: pointer;
 `;

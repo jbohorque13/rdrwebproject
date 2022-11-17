@@ -1,10 +1,10 @@
 import React from 'react';
-import { Column, useTable } from 'react-table';
+import { Column } from 'react-table';
 // Table
 import Table from 'components/UI/Table';
-
+import { IconEyeOpenSVG, IconEditSVG } from 'components/UI/Icon'
 import {
-  StyledTableHeadRowCustom
+  StyledActionBodyCell,
 } from './style';
 
 
@@ -72,6 +72,17 @@ const Dashboard: React.FC = () => {
       {
         Header: 'A que hora da el grupo',
         accessor: 'group_hour'
+      },
+      {
+        Header: 'Acciones',
+        Cell: ({ row: { original } }: any) => {
+          return (
+            <StyledActionBodyCell> 
+              <IconEyeOpenSVG title='Mirar informacion completa' /> 
+              <IconEditSVG title='Editar estado del guia' />
+            </StyledActionBodyCell>
+          )
+        }
       }
     ],
     []

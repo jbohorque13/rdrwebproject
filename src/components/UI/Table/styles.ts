@@ -70,4 +70,6 @@ export const StyledTableBodyCell = styled.td<{ $withOverFlow?: boolean }>`
   ` : 'display: flex; justify-content: flex-end;')}
 `;
 
-export const StyledIconDropdown = styled(IconArrowDown)``;
+export const StyledIconDropdown = styled(IconArrowDown)`
+  color: ${theme.colors.black};
+`;
