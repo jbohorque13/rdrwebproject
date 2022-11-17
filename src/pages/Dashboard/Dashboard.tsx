@@ -17,40 +17,40 @@ import {
 
 
 interface LeaderShip {
-  fullName: string;
+  full_name: string;
+  phone_number: string;
   email: string;
-  phone: string;
-  coordinator?: string;
-  dayGroup: string;
-  hourStarted: string;
-  multiLeaderShip?: boolean;
-  agePromedium?: string;
-  typeGroup?: string;
-  numberDiscipules?: number | string;
-  receivedNewPersonFromPointConection?: boolean;
-  typeAssistant?: string;
-  placeMeeting?: string;
-  status?: 'guia' | 'ayudante' | 'coordinador';
-  completingListAssistentStatus?: boolean;
-  timeChurch?: number | string;
+  coordination?: string;
+  group_day: string;
+  group_hour: string;
+  many_leadership?: boolean;
+  promedium_ages?: string;
+  type_group?: string;
+  many_people_in_group?: number | string;
+  received_peole_pount_conection?: boolean;
+  class_type?: string;
+  group_place?: string;
+  status_leadership?: 'guia' | 'ayudante' | 'coordinador';
+  assisted_assistance?: boolean;
+  many_time_church?: number | string;
   address?: string;
   locality?: string;
-  reunionCongregation?: string;
+  service_church_assisted?: string;
   ministery?: string;
-  ageOwn: string | number;
+  age: string | number;
 }
 
 const Dashboard: React.FC = () => {
   // useMemo
   const data = React.useMemo<LeaderShip[]>(() => [
     {
-      fullName: 'Josue',
-      email: '23',
-      phone: '1158676125',
-      coordinator: 'Vicente Loli',
-      ageOwn: '29',
-      dayGroup: 'Viernes',
-      hourStarted: '21:00',
+      full_name: 'Josue',
+      email: 'josuebohorquezc@gmail.com',
+      phone_number: '1158676125',
+      coordination: 'Vicente Loli',
+      age: '29',
+      group_day: 'Viernes',
+      group_hour: '21:00',
     }
   ], []);
 
@@ -58,11 +58,27 @@ const Dashboard: React.FC = () => {
     () => [
       {
         Header: 'Nombre y apellido',
-        accessor: 'fullName'
+        accessor: 'full_name'
+      },
+      {
+        Header: 'telefono',
+        accessor: 'phone_number'
       },
       {
         Header: 'Email',
         accessor: 'email'
+      },
+      {
+        Header: 'Coordinacion',
+        accessor: 'coordination'
+      },
+      {
+        Header: 'Que dia da el grupo',
+        accessor: 'group_day'
+      },
+      {
+        Header: 'A que hora da el grupo',
+        accessor: 'group_hour'
       }
     ],
     []
