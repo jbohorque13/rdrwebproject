@@ -3,7 +3,9 @@ import { Column } from 'react-table';
 import { Helmet } from 'react-helmet';
 // Table
 import Table from 'components/UI/Table';
-import { IconEyeOpenSVG, IconEditSVG } from 'components/UI/Icon'
+import { IconEyeOpenSVG, IconEditSVG } from 'components/UI/Icon';
+import Paginate from 'components/UI/Paginate';
+
 import {
   StyledActionBodyCell,
   PageMainContainer,
@@ -36,6 +38,15 @@ interface LeaderShip {
 }
 
 const Dashboard: React.FC = () => {
+  // useCallback
+  const handleGoFoward = React.useCallback(() => {
+    console.log('Next ')
+  }, []);
+
+  const handleGoPrevious = React.useCallback(() => {
+    console.log('Back ')
+  }, []);
+
   // useMemo
   const data = React.useMemo<LeaderShip[]>(() => [
     {
@@ -103,6 +114,12 @@ const Dashboard: React.FC = () => {
         <Table 
           data={data} 
           columns={columns} 
+        />
+        <Paginate 
+          current_page={1}
+          class_names='paginate' 
+          handleGoFoward={handleGoFoward}
+          handleGoPrevious={handleGoPrevious}
         />
       </PageMainContainer>
     </>
