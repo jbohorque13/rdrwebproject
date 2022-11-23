@@ -26,12 +26,12 @@ const Paginate: React.FC<PaginateProps> = ({class_names, ...props}: PaginateProp
   const handleBack = React.useCallback(() => {
     const {handleGoPrevious} = props;
     if (handleGoPrevious) handleGoPrevious();
-  }, [props.handleGoPrevious])
+  }, [props])
 
   const handleNext = React.useCallback(() => {
     const {handleGoFoward} = props;
     if (handleGoFoward) handleGoFoward();
-  }, [props.handleGoFoward])
+  }, [props])
   return (
     <StyledWraper className={class_names}>
       <StyledIconArrowLeft onClick={handleBack} />

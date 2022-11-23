@@ -51,6 +51,7 @@ type IResponse = {
   statusCode: number;
   body: {
     data: LeaderShip[],
+    lastEvaluatedKey: LeaderShip,
     page: IPaginate
   };
   headers: Array<any>;
@@ -59,28 +60,90 @@ type IResponse = {
 const Dashboard: React.FC = () => {
   // useState
   const [leadershipsState, setLeadershipsState] = React.useState<LeaderShip[]>([]);
+  const [page, setPage] = React.useState<IPaginate>({
+    current_page: 1,
+    has_next: false,
+    next_page: 1,
+    has_previous: false,
+    previous_page: 1,
+    page_size: 4,
+  });
+  const [lastEvaluatedKey, setLastEvaluatedKey] = React.useState<LeaderShip>();
+  const [refreshStatus, setRefreshStatus] = React.useState<boolean>(true);
+  // Hooks
+  const leadershipRequest = React.useCallback( async () => {
+    try {
+      setRefreshStatus(false);
+      console.log(
+        {
+          current_page: page.current_page,
+          page_size: page.page_size,
+        }, 
+        {
+          lastEvaluatedKey: {
+            full_name: lastEvaluatedKey?.full_name,
+            phone_number: lastEvaluatedKey?.phone_number
+          }
+        }
+      );
+
+      const response: IResponse = await leaderships(
+        {
+          current_page: page.current_page,
+          page_size: page.page_size,
+        }, 
+        lastEvaluatedKey ? {
+          LastEvaluatedKey: {
+            full_name: lastEvaluatedKey?.full_name,
+            phone_number: lastEvaluatedKey?.phone_number
+          }
+        } : {}
+      );
+      // updated states
+      setLeadershipsState(JSON.parse(response.body.data.toString()));
+      setPage(JSON.parse(response.body.page.toString()));
+      setLastEvaluatedKey(JSON.parse(response.body.lastEvaluatedKey.toString()));
+      
+    } catch (e) {
+      console.error(e);
+    }
+  }, [page, setLastEvaluatedKey, setLeadershipsState, setPage, lastEvaluatedKey]);
+
+
   // useEffect
   React.useEffect(() => {
     async function fn () {
-      const response: IResponse = await leaderships();
-      let leader: LeaderShip[] = Object.values(JSON.parse(response.body.data.toString() as string));
-      setLeadershipsState([
-        ...leader
-      ]);
+      if (refreshStatus){
+        await leadershipRequest();
+      }
     }
     fn()
-  }, []);
+  }, [refreshStatus, page]);
+
   // useCallback
   const handleGoFoward = React.useCallback(() => {
-    console.log('Next ')
-  }, []);
+    if (lastEvaluatedKey && page.has_next) {
+      setRefreshStatus(true);
+      setPage({
+        ...page,
+        current_page: page.next_page
+      });
+    }
+  }, [page, setPage, lastEvaluatedKey]);
 
-  const handleGoPrevious = React.useCallback(() => {
-    console.log('Back ')
-  }, []);
+  const handleGoPrevious = React.useCallback( async () => {
+    if (lastEvaluatedKey && page.has_previous) {
+      setRefreshStatus(true);
+      setPage({
+        ...page,
+        current_page: page.previous_page
+      });
+    }
+  }, [page, setPage, lastEvaluatedKey]);
 
   // useMemo
   const data = React.useMemo<LeaderShip[]>(() => leadershipsState, [leadershipsState]);
+  
   const columns: Column<LeaderShip>[] = React.useMemo(
     () => [
       {
@@ -137,8 +200,8 @@ const Dashboard: React.FC = () => {
           columns={columns} 
         />
         <Paginate 
-          current_page={1}
           class_names='paginate' 
+          {...page}
           handleGoFoward={handleGoFoward}
           handleGoPrevious={handleGoPrevious}
         />

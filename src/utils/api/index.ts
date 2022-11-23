@@ -11,13 +11,19 @@ export function users () {
     )
 }
 
-export function leaderships () {
+interface IPageInput {
+  current_page: number;
+  page_size: number;
+};
+
+
+export function leaderships (pageInput: IPageInput, lastEvaluatedKey?: any) {
+  if (lastEvaluatedKey) {
+    pageInput = Object.assign(pageInput, lastEvaluatedKey)
+  }
   return fetch('https://czcn4ihigg.execute-api.us-east-1.amazonaws.com/test/paginate_leadership', {
     method: 'POST',
-    body: JSON.stringify({
-      "current_page": 1,
-      "page_size": 8
-    }),
+    body: JSON.stringify(pageInput),
     headers: { 'Content-Type': 'application/json' }
   })
     .then(res => res.json())
