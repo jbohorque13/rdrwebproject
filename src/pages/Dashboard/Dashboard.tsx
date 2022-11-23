@@ -68,7 +68,7 @@ const Dashboard: React.FC = () => {
     previous_page: 1,
     page_size: 4,
   });
-  const [lastEvaluatedKey, setLastEvaluatedKey] = React.useState<LeaderShip>();
+  const [lastEvaluatedKey, setLastEvaluatedKey] = React.useState<LeaderShip | null>(null);
   const [refreshStatus, setRefreshStatus] = React.useState<boolean>(true);
   // Hooks
   const leadershipRequest = React.useCallback( async () => {
@@ -79,12 +79,11 @@ const Dashboard: React.FC = () => {
           current_page: page.current_page,
           page_size: page.page_size,
         }, 
-        {
-          lastEvaluatedKey: {
-            full_name: lastEvaluatedKey?.full_name,
-            phone_number: lastEvaluatedKey?.phone_number
+        !!lastEvaluatedKey ? {
+          LastEvaluatedKey: {
+            ...lastEvaluatedKey
           }
-        }
+        }: null
       );
 
       const response: IResponse = await leaderships(
@@ -92,12 +91,12 @@ const Dashboard: React.FC = () => {
           current_page: page.current_page,
           page_size: page.page_size,
         }, 
-        lastEvaluatedKey ? {
+        !!lastEvaluatedKey ? {
           LastEvaluatedKey: {
-            full_name: lastEvaluatedKey?.full_name,
-            phone_number: lastEvaluatedKey?.phone_number
+            full_name: lastEvaluatedKey.full_name,
+            phone_number: lastEvaluatedKey.phone_number
           }
-        } : {}
+        } : null
       );
       // updated states
       setLeadershipsState(JSON.parse(response.body.data.toString()));
@@ -134,12 +133,13 @@ const Dashboard: React.FC = () => {
   const handleGoPrevious = React.useCallback( async () => {
     if (lastEvaluatedKey && page.has_previous) {
       setRefreshStatus(true);
+      setLastEvaluatedKey(null);
       setPage({
         ...page,
         current_page: page.previous_page
       });
     }
-  }, [page, setPage, lastEvaluatedKey]);
+  }, [page, setPage, lastEvaluatedKey, setLastEvaluatedKey]);
 
   // useMemo
   const data = React.useMemo<LeaderShip[]>(() => leadershipsState, [leadershipsState]);
