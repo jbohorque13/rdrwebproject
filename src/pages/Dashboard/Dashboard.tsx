@@ -12,6 +12,7 @@ import {
   StyledTempText
 } from './style';
 
+import {leaderships} from 'utils/api';
 
 interface LeaderShip {
   full_name: string;
@@ -37,7 +38,38 @@ interface LeaderShip {
   age: string | number;
 }
 
+interface IPaginate {
+  current_page: number;
+  has_next: boolean;
+  next_page: number;
+  has_previous: boolean;
+  previous_page: number;
+  page_size: number;
+}
+
+type IResponse = {
+  statusCode: number;
+  body: {
+    data: LeaderShip[],
+    page: IPaginate
+  };
+  headers: Array<any>;
+}
+
 const Dashboard: React.FC = () => {
+  // useState
+  const [leadershipsState, setLeadershipsState] = React.useState<LeaderShip[]>([]);
+  // useEffect
+  React.useEffect(() => {
+    async function fn () {
+      const response: IResponse = await leaderships();
+      let leader: LeaderShip[] = Object.values(JSON.parse(response.body.data.toString() as string));
+      setLeadershipsState([
+        ...leader
+      ]);
+    }
+    fn()
+  }, []);
   // useCallback
   const handleGoFoward = React.useCallback(() => {
     console.log('Next ')
@@ -48,18 +80,7 @@ const Dashboard: React.FC = () => {
   }, []);
 
   // useMemo
-  const data = React.useMemo<LeaderShip[]>(() => [
-    {
-      full_name: 'Josue',
-      email: 'josuebohorquezc@gmail.com',
-      phone_number: '1158676125',
-      coordination: 'Vicente Loli es mi coordinador desde hace mas de 10 anos',
-      age: '29',
-      group_day: 'Viernes',
-      group_hour: '21:00',
-    }
-  ], []);
-
+  const data = React.useMemo<LeaderShip[]>(() => leadershipsState, [leadershipsState]);
   const columns: Column<LeaderShip>[] = React.useMemo(
     () => [
       {
