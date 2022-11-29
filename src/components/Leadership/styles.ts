@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const PageMainContainer = styled.div`
   width: 100%;
+  position: absolute;
 `;
 
 export const Styledtitle = styled.h2``;

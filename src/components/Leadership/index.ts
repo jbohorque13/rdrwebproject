@@ -1,1 +1,1 @@
-export {default} from './Leadership';
+export { default } from './Leadership';

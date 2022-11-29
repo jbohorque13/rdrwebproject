@@ -13,6 +13,7 @@ import {
 } from './style';
 
 import {leaderships} from 'utils/api';
+import Leadership from 'components/Leadership';
 
 interface LeaderShip {
   full_name: string;
@@ -51,7 +52,6 @@ type IResponse = {
   statusCode: number;
   body: {
     data: LeaderShip[],
-    lastEvaluatedKey: LeaderShip,
     page: IPaginate
   };
   headers: Array<any>;
@@ -66,10 +66,11 @@ const Dashboard: React.FC = () => {
     next_page: 1,
     has_previous: false,
     previous_page: 1,
-    page_size: 4,
+    page_size: 10,
   });
-  const [lastEvaluatedKey, setLastEvaluatedKey] = React.useState<LeaderShip | null>(null);
   const [refreshStatus, setRefreshStatus] = React.useState<boolean>(true);
+  const [isViewLeadership, setIsViewLeadership] = React.useState<boolean>(false);
+  const [leadershipSelected, setLeadershipSelected] = React.useState<LeaderShip | null>(null);
   // Hooks
   const leadershipRequest = React.useCallback( async () => {
     try {
@@ -78,35 +79,23 @@ const Dashboard: React.FC = () => {
         {
           current_page: page.current_page,
           page_size: page.page_size,
-        }, 
-        !!lastEvaluatedKey ? {
-          LastEvaluatedKey: {
-            ...lastEvaluatedKey
-          }
-        }: null
+        }
       );
 
       const response: IResponse = await leaderships(
         {
           current_page: page.current_page,
           page_size: page.page_size,
-        }, 
-        !!lastEvaluatedKey ? {
-          LastEvaluatedKey: {
-            full_name: lastEvaluatedKey.full_name,
-            phone_number: lastEvaluatedKey.phone_number
-          }
-        } : null
+        }
       );
       // updated states
       setLeadershipsState(JSON.parse(response.body.data.toString()));
       setPage(JSON.parse(response.body.page.toString()));
-      setLastEvaluatedKey(JSON.parse(response.body.lastEvaluatedKey.toString()));
       
     } catch (e) {
       console.error(e);
     }
-  }, [page, setLastEvaluatedKey, setLeadershipsState, setPage, lastEvaluatedKey]);
+  }, [page, setLeadershipsState, setPage]);
 
 
   // useEffect
@@ -121,25 +110,29 @@ const Dashboard: React.FC = () => {
 
   // useCallback
   const handleGoFoward = React.useCallback(() => {
-    if (lastEvaluatedKey && page.has_next) {
+    if (page.has_next) {
       setRefreshStatus(true);
       setPage({
         ...page,
         current_page: page.next_page
       });
     }
-  }, [page, setPage, lastEvaluatedKey]);
+  }, [page, setPage]);
 
   const handleGoPrevious = React.useCallback( async () => {
-    if (lastEvaluatedKey && page.has_previous) {
+    if (page.has_previous) {
       setRefreshStatus(true);
-      setLastEvaluatedKey(null);
       setPage({
         ...page,
         current_page: page.previous_page
       });
     }
-  }, [page, setPage, lastEvaluatedKey, setLastEvaluatedKey]);
+  }, [page, setPage]);
+
+  const handleOpenViewLeadership = React.useCallback((leadership: LeaderShip) => {
+    setIsViewLeadership(true);
+    setLeadershipSelected(leadership);
+  }, [setIsViewLeadership, setLeadershipSelected]);
 
   // useMemo
   const data = React.useMemo<LeaderShip[]>(() => leadershipsState, [leadershipsState]);
@@ -177,13 +170,13 @@ const Dashboard: React.FC = () => {
           return (
             <StyledActionBodyCell> 
               <IconEyeOpenSVG title='Mirar informacion completa' /> 
-              <IconEditSVG title='Editar estado del guia' />
+              <IconEditSVG title='Editar estado del guia' handleOpenViewLeadership={original} />
             </StyledActionBodyCell>
           )
         }
       }
     ],
-    []
+    [handleOpenViewLeadership]
   );
 
   return (
@@ -205,6 +198,10 @@ const Dashboard: React.FC = () => {
           handleGoFoward={handleGoFoward}
           handleGoPrevious={handleGoPrevious}
         />
+        {isViewLeadership && leadershipSelected ? (
+            <Leadership {...leadershipSelected} />
+          ) : null
+        }
       </PageMainContainer>
     </>
   )
