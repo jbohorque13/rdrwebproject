@@ -129,8 +129,9 @@ const Dashboard: React.FC = () => {
     }
   }, [page, setPage]);
 
-  const handleOpenViewLeadership = React.useCallback((leadership: LeaderShip) => {
+  const handleOpenViewLeadership = React.useCallback((leadership: any) => {
     setIsViewLeadership(true);
+    console.log(leadership);
     setLeadershipSelected(leadership);
   }, [setIsViewLeadership, setLeadershipSelected]);
 
@@ -170,7 +171,7 @@ const Dashboard: React.FC = () => {
           return (
             <StyledActionBodyCell> 
               <IconEyeOpenSVG title='Mirar informacion completa' /> 
-              <IconEditSVG title='Editar estado del guia' handleOpenViewLeadership={original} />
+              <IconEditSVG title='Editar estado del guia' onClick={() => handleOpenViewLeadership(original)} />
             </StyledActionBodyCell>
           )
         }

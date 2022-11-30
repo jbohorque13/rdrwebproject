@@ -24,11 +24,11 @@ interface LeaderShip {
   group_place?: string;
   status_leadership?: 'guia' | 'ayudante' | 'coordinador';
   assisted_assistance?: boolean;
-  many_time_church?: number | string;
+  many_type_church?: number | string;
   address?: string;
   locality?: string;
   service_church_assisted?: string;
-  ministery?: string;
+  ministery_services_particitiped?: string;
   age: string | number;
 }
 
@@ -39,17 +39,15 @@ const Leadership: React.FC<LeaderShip> = (leadership : LeaderShip) => {
         <title>Integración</title>
       </Helmet>
       <PageMainContainer>
-        {/* Fullname */}
         <StyledContent>
+          {/* Fullname */}
           <Styledtitle>
-            Nombre completo:
+            Nombre completo
           </Styledtitle> 
           <StyledText> 
             {leadership?.full_name}
           </StyledText>
-        </StyledContent>
-        {/* Email */}
-        <StyledContent>
+          {/* Email */}
           <Styledtitle>
             Email
           </Styledtitle> 
@@ -57,17 +55,16 @@ const Leadership: React.FC<LeaderShip> = (leadership : LeaderShip) => {
             {leadership?.email}
           </StyledText>
         </StyledContent>
-        {/* Edad */}
+        
         <StyledContent>
+          {/* Edad */}
           <Styledtitle>
             Edad
           </Styledtitle> 
           <StyledText> 
             {leadership?.age}
           </StyledText>
-        </StyledContent>
-        {/* Numero de télefono */}
-        <StyledContent>
+          {/* Numero de télefono */}
           <Styledtitle>
             Numero de télefono
           </Styledtitle> 
@@ -75,17 +72,15 @@ const Leadership: React.FC<LeaderShip> = (leadership : LeaderShip) => {
             {leadership?.phone_number}
           </StyledText>
         </StyledContent>
-        {/* Dia de grupo */}
+        
+        {/* Grupo info */}
         <StyledContent>
           <Styledtitle>
-            Día de grupo
+            Día de grupo de conexión
           </Styledtitle> 
           <StyledText> 
             {leadership?.group_day}
           </StyledText>
-        </StyledContent>
-        {/* Horario de grupo */}
-        <StyledContent>
           <Styledtitle>
             Horario de grupo
           </Styledtitle> 
@@ -116,6 +111,51 @@ const Leadership: React.FC<LeaderShip> = (leadership : LeaderShip) => {
         <StyledContent>
           <Styledtitle> Tipo de grupo </Styledtitle> 
           <StyledText> {leadership?.type_group} </StyledText>
+        </StyledContent>
+        {/* ¿Hace cuánto asistís a la iglesia? */}
+        <StyledContent>
+          <Styledtitle>  Tiempo de congregacion en la Iglesia </Styledtitle> 
+          <StyledText> {leadership?.many_type_church} </StyledText>
+        </StyledContent>
+        {/* ¿Participas en algún ministerio? ¿Cuál? */}
+        <StyledContent>
+          <Styledtitle>  Ministerio en el que partipa </Styledtitle> 
+          <StyledText> {leadership?.ministery_services_particitiped} </StyledText>
+        </StyledContent>
+        {/* Sos guia o ayudante o coordinador? */}
+        <StyledContent>
+          <Styledtitle>  Rol en la Iglesia </Styledtitle> 
+          <StyledText> {leadership?.status_leadership} </StyledText>
+        </StyledContent>
+        {/* Coordinador */}
+        <StyledContent>
+          <Styledtitle>  Coordinador </Styledtitle> 
+          <StyledText> {leadership?.coordination} </StyledText>
+        </StyledContent>
+        {/* Rango de edades de los discipulos */}
+        <StyledContent>
+          <Styledtitle>  Rango de edades de los discípulos  </Styledtitle> 
+          <StyledText> {leadership?.promedium_ages} </StyledText>
+        </StyledContent>
+        {/* Nos encontramos */}
+        <StyledContent>
+          <Styledtitle>  Nos encontramos de forma  </Styledtitle> 
+          <StyledText> {leadership?.class_type} </StyledText>
+        </StyledContent>
+        {/* Si es presencial donde? */}
+        <StyledContent>
+          <Styledtitle>  Nos encontramos en  </Styledtitle> 
+          <StyledText> {leadership?.group_place} </StyledText>
+        </StyledContent>
+        {/* Cantidad regular de chicos que participan en tu grupo? (en promedio) */}
+        <StyledContent>
+          <Styledtitle>  Cantidad regular de chicos que participan en tu grupo  </Styledtitle> 
+          <StyledText> {leadership?.many_people_in_group} </StyledText>
+        </StyledContent>
+        {/* Si todavia no estas completando tu lista de asistencia del grupo de manera online, necesitas ayuda? */}
+        <StyledContent>
+          <Styledtitle> ¿Precisa ayuda para hacer la asistencia online? </Styledtitle> 
+          <StyledText> {leadership?.assisted_assistance}, necesito ayuda. </StyledText>
         </StyledContent>
       </PageMainContainer>
     </>
