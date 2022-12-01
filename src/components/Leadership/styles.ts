@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import {theme} from 'theme';
+// components
+import { IconCloseSVG } from 'components/UI/Icon';
 
 export const PageMainContainer = styled.div`
   left: 250px;
@@ -24,4 +26,11 @@ export const StyledText = styled.p`
   align-items: center;
   margin-left: 10px;
   margin-right: 20px;
+`;
+
+export const StyledIconClose = styled(IconCloseSVG)`
+  position: absolute;
+  left: ${window.innerWidth - 300}px;
+  top: 10px;
+  cursor: pointer;
 `;

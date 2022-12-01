@@ -135,6 +135,9 @@ const Dashboard: React.FC = () => {
     setLeadershipSelected(leadership);
   }, [setIsViewLeadership, setLeadershipSelected]);
 
+  const handleCloseDetailLeadership = React.useCallback(() => {
+    setIsViewLeadership(false);
+  }, [setIsViewLeadership]);
   // useMemo
   const data = React.useMemo<LeaderShip[]>(() => leadershipsState, [leadershipsState]);
   
@@ -200,7 +203,10 @@ const Dashboard: React.FC = () => {
           handleGoPrevious={handleGoPrevious}
         />
         {isViewLeadership && leadershipSelected ? (
-            <Leadership {...leadershipSelected} />
+            <Leadership 
+              leadership={leadershipSelected}
+              handleCloseDetailLeadership={() => handleCloseDetailLeadership}
+            />
           ) : null
         }
       </PageMainContainer>
