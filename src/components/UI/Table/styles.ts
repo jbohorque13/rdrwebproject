@@ -40,7 +40,8 @@ export const StyledTableHeadCell = styled.th<{ $isAction?: boolean }>`
   text-align: left;
   font-weight: ${theme.fontWeights.semiBold};
   padding: 16px 8px;
-  width: 160px;
+  min-width: 150px;
+  max-width: 160px;
   ${({$isAction}) => $isAction && `color: ${theme.colors.ricciardoYellow}`}
 `;
 
@@ -63,8 +64,8 @@ export const StyledTableBodyCell = styled.td<{ $withOverFlow?: boolean }>`
   padding: 12px 20px;
   padding-left: 14px;
   text-overflow: ellipsis;
-  min-width: 130px;
-  max-width: 150px;
+  min-width: 120px;
+  max-width: 140px;
   text-align: left;
   ${({ $withOverFlow }) => ($withOverFlow ? `
     overflow: hidden;

@@ -36,3 +36,20 @@ export function leaderships (pageInput: IPageInput, lastEvaluatedKey?: any) {
       }
     );
 }
+
+export function getPersonsPreached (pageInput: IPageInput) {
+  return fetch('https://czcn4ihigg.execute-api.us-east-1.amazonaws.com/test/paginate_persons_preached', {
+    method: 'POST',
+    body: JSON.stringify(pageInput),
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then(res => res.json())
+    .then(
+      (result) => {
+        return result
+      },
+      (error) => {
+        return error;
+      }
+    );
+}

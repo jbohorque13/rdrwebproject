@@ -38,7 +38,6 @@ const Table = ({ data, columns }: TableProps) => {
           {headerGroups.map(headerGroup => (
           <StyledTableHeadRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => {
-                console.log('column', column);
                 return (
 
                   <StyledTableHeadCell

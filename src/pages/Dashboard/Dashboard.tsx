@@ -131,7 +131,6 @@ const Dashboard: React.FC = () => {
 
   const handleOpenViewLeadership = React.useCallback((leadership: any) => {
     setIsViewLeadership(true);
-    console.log(leadership);
     setLeadershipSelected(leadership);
   }, [setIsViewLeadership, setLeadershipSelected]);
 
@@ -148,7 +147,7 @@ const Dashboard: React.FC = () => {
         accessor: 'full_name'
       },
       {
-        Header: 'telefono',
+        Header: 'Teléfono',
         accessor: 'phone_number'
       },
       {
@@ -157,7 +156,7 @@ const Dashboard: React.FC = () => {
         
       },
       {
-        Header: 'Coordinacion',
+        Header: 'Coordinación',
         accessor: 'coordination'
       },
       {
@@ -185,8 +184,8 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      <Helmet titleTemplate='Rdr Admin - Integracion'>
-        <title> Integracion </title>
+      <Helmet titleTemplate='Rdr Admin - Integración'>
+        <title> Integración </title>
       </Helmet>
       <PageMainContainer>
         <StyledTempText>
