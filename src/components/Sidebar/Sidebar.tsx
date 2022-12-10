@@ -17,7 +17,7 @@ const Sidebar = () => {
         </StyledListRow>
         <StyledListRow>
           <StyledLink to="/dashboard">
-            Guias Tabla
+            Guías
           </StyledLink>
         </StyledListRow>
         <StyledListRow>

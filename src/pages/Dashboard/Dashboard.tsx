@@ -172,8 +172,8 @@ const Dashboard: React.FC = () => {
         Cell: ({ row: { original } }: any) => {
           return (
             <StyledActionBodyCell> 
-              <IconEyeOpenSVG title='Mirar informacion completa' /> 
-              <IconEditSVG title='Editar estado del guia' onClick={() => handleOpenViewLeadership(original)} />
+              <IconEyeOpenSVG title='Mirar informacion completa' onClick={() => handleOpenViewLeadership(original)}  /> 
+              <IconEditSVG title='Editar estado del guía'/>
             </StyledActionBodyCell>
           )
         }
@@ -189,7 +189,7 @@ const Dashboard: React.FC = () => {
       </Helmet>
       <PageMainContainer>
         <StyledTempText>
-          Lideres de todas las lineas
+          Guías de todas las lineas
         </StyledTempText>
         <Table 
           data={data} 
